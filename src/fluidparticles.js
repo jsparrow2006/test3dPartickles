@@ -4,6 +4,7 @@ import { Utilities} from './utilities';
 import { Camera} from './camera';
 import { BoxEditor} from './boxeditor';
 import { SimulatorRenderer} from './simulatorrenderer';
+import window from './ssr-window'
 
 
 export const FluidParticles = (function () {
