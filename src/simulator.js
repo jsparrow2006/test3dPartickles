@@ -42,63 +42,63 @@ export const Simulator = (function () {
 
         wgl.createProgramsFromFiles({
             transferToGridProgram: {
-                vertexShader: 'shaders/transfertogrid.vert',
-                fragmentShader: ['shaders/common.frag', 'shaders/transfertogrid.frag'],
+                vertexShader: 'transfertogrid.vert',
+                fragmentShader: ['common.frag', 'transfertogrid.frag'],
                 attributeLocations: { 'a_textureCoordinates': 0}
             },
             normalizeGridProgram: {
-                vertexShader: 'shaders/fullscreen.vert',
-                fragmentShader: 'shaders/normalizegrid.frag',
+                vertexShader: 'fullscreen.vert',
+                fragmentShader: 'normalizegrid.frag',
                 attributeLocations: { 'a_position': 0}
             },
             markProgram: {
-                vertexShader: 'shaders/mark.vert',
-                fragmentShader: 'shaders/mark.frag',
+                vertexShader: 'mark.vert',
+                fragmentShader: 'mark.frag',
                 attributeLocations: { 'a_textureCoordinates': 0}
             },
             addForceProgram: {
-                vertexShader: 'shaders/fullscreen.vert',
-                fragmentShader: ['shaders/common.frag', 'shaders/addforce.frag'],
+                vertexShader: 'fullscreen.vert',
+                fragmentShader: ['common.frag', 'addforce.frag'],
                 attributeLocations: { 'a_position': 0}
             },
             enforceBoundariesProgram: {
-                vertexShader: 'shaders/fullscreen.vert',
-                fragmentShader: ['shaders/common.frag', 'shaders/enforceboundaries.frag'],
+                vertexShader: 'fullscreen.vert',
+                fragmentShader: ['common.frag', 'enforceboundaries.frag'],
                 attributeLocations: { 'a_textureCoordinates': 0 }
             },
             extendVelocityProgram: {
-                vertexShader: 'shaders/fullscreen.vert',
-                fragmentShader: 'shaders/extendvelocity.frag',
+                vertexShader: 'fullscreen.vert',
+                fragmentShader: 'extendvelocity.frag',
                 attributeLocations: { 'a_textureCoordinates': 0 }
             },
             transferToParticlesProgram: {
-                vertexShader: 'shaders/fullscreen.vert',
-                fragmentShader: ['shaders/common.frag', 'shaders/transfertoparticles.frag'],
+                vertexShader: 'fullscreen.vert',
+                fragmentShader: ['common.frag', 'transfertoparticles.frag'],
                 attributeLocations: { 'a_position': 0}
             },
             divergenceProgram: {
-                vertexShader: 'shaders/fullscreen.vert',
-                fragmentShader: ['shaders/common.frag', 'shaders/divergence.frag'],
+                vertexShader: 'fullscreen.vert',
+                fragmentShader: ['common.frag', 'divergence.frag'],
                 attributeLocations: { 'a_position': 0}
             },
             jacobiProgram: {
-                vertexShader: 'shaders/fullscreen.vert',
-                fragmentShader: ['shaders/common.frag', 'shaders/jacobi.frag'],
+                vertexShader: 'fullscreen.vert',
+                fragmentShader: ['common.frag', 'jacobi.frag'],
                 attributeLocations: { 'a_position': 0}
             },
             subtractProgram: {
-                vertexShader: 'shaders/fullscreen.vert',
-                fragmentShader: ['shaders/common.frag', 'shaders/subtract.frag'],
+                vertexShader: 'fullscreen.vert',
+                fragmentShader: ['common.frag', 'subtract.frag'],
                 attributeLocations: { 'a_position': 0}
             },
             advectProgram: {
-                vertexShader: 'shaders/fullscreen.vert',
-                fragmentShader: ['shaders/common.frag', 'shaders/advect.frag'],
+                vertexShader: 'fullscreen.vert',
+                fragmentShader: ['common.frag', 'advect.frag'],
                 attributeLocations: { 'a_position': 0}
             },
             copyProgram: {
-                vertexShader: 'shaders/fullscreen.vert',
-                fragmentShader: 'shaders/copy.frag',
+                vertexShader: 'fullscreen.vert',
+                fragmentShader: 'copy.frag',
                 attributeLocations: { 'a_position': 0}
             }
         }, (function (programs) {

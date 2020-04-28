@@ -137,8 +137,6 @@ export const Renderer = (function () {
 
     //you need to call reset() before drawing
     function Renderer (canvas, wgl, gridDimensions, onLoaded, settings) {
-        console.log(settings)
-
         function hexToRgb(hex) {
             var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
             hex = hex.replace(shorthandRegex, function(m, r, g, b) {
@@ -155,7 +153,6 @@ export const Renderer = (function () {
 
         this.color1 = hexToRgb(settings.color1);
         this.color2 = settings.color2 ? hexToRgb(settings.color2) : this.color1;
-        console.log(this.color1)
 
         this.canvas = canvas;
         this.wgl = wgl;
@@ -214,25 +211,25 @@ export const Renderer = (function () {
 
         wgl.createProgramsFromFiles({
             sphereProgram: {
-                vertexShader: 'shaders/sphere.vert',
-                fragmentShader: 'shaders/sphere.frag'
+                vertexShader: 'sphere.vert',
+                fragmentShader: 'sphere.frag'
             },
             sphereDepthProgram: {
-                vertexShader: 'shaders/spheredepth.vert',
-                fragmentShader: 'shaders/spheredepth.frag'
+                vertexShader: 'spheredepth.vert',
+                fragmentShader: 'spheredepth.frag'
             },
             sphereAOProgram: {
-                vertexShader: 'shaders/sphereao.vert',
-                fragmentShader: 'shaders/sphereao.frag'
+                vertexShader: 'sphereao.vert',
+                fragmentShader: 'sphereao.frag'
             },
             compositeProgram: {
-                vertexShader: 'shaders/fullscreen.vert',
-                fragmentShader: 'shaders/composite.frag',
+                vertexShader: 'fullscreen.vert',
+                fragmentShader: 'composite.frag',
                 attributeLocations: { 'a_position': 0}
             },
             fxaaProgram: {
-                vertexShader: 'shaders/fullscreen.vert',
-                fragmentShader: 'shaders/fxaa.frag',
+                vertexShader: 'fullscreen.vert',
+                fragmentShader: 'fxaa.frag',
                 attributeLocations: { 'a_position': 0}
             },
         }, (function (programs) {

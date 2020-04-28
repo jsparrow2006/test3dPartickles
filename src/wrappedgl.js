@@ -1,4 +1,5 @@
 'use strict'
+import shaderList from './shaders.json'
 
 export const WrappedGL = (function () {
 
@@ -829,29 +830,36 @@ export const WrappedGL = (function () {
         return new WrappedProgram(this, vertexShaderSource, fragmentShaderSource, attributeLocations); 
     };
 
-    function loadTextFiles (filenames, onLoaded) {
+    async function loadTextFiles (filenames, onLoaded) {
         var loadedSoFar = 0;
         var results = {};
         for (var i = 0; i < filenames.length; ++i) {
             var filename = filenames[i];
-            (function () {
-                var name = filename;
-                var request = new XMLHttpRequest();
-                request.onreadystatechange = function () {
-                    if (request.readyState === 4) { 
-                        var text = request.responseText;
-                        results[name] = text;
-                        loadedSoFar += 1;
-                        if (loadedSoFar === filenames.length) {
-                            onLoaded(results);    
-                        }
-                    }
-                }
-                request.open('GET', name, true);
-                request.send();
+            results[filename] = shaderList[filename]
+            // import(`./${filename}`).then(txt => {
+            //     console.log(txt);
+            //     results[filename] = txt
+            // })
+        
+            // (function () {
+            //     var name = filename;
+            //     var request = new XMLHttpRequest();
+            //     request.onreadystatechange = function () {
+            //         if (request.readyState === 4) { 
+            //             var text = request.responseText;
+            //             results[name] = text;
+            //             loadedSoFar += 1;
+            //             if (loadedSoFar === filenames.length) {
+            //                 onLoaded(results);    
+            //             }
+            //         }
+            //     }
+            //     request.open('GET', name, true);
+            //     request.send();
 
-            }());
+            // }());
         }
+        onLoaded(results);
     };
 
     WrappedGL.prototype.createProgramFromFiles = function (vertexShaderPath, fragmentShaderPath, attributeLocations, successCallback, failureCallback) {

@@ -4,8 +4,9 @@
   "description": "Animation 3d particles",
   "main": "index.js",
   "scripts": {
-    "start": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node ./scripts/buildShaders.js && webpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "buildShaders": "node ./scripts/buildShaders.js"
   },
   "author": "Igor Gaichuk",
   "license": "ISC",
@@ -18,6 +19,9 @@
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "copy-webpack-plugin": "^5.1.1",
+    "file-loader": "^6.0.0",
+    "raw-loader": "^4.0.1",
+    "url-loader": "^4.1.0",
     "webpack-cli": "^3.3.11"
   }
 }

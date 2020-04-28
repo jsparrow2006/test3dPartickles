@@ -1,6 +1,4 @@
-// import { WrappedGL} from './wrappedgl';
 import { FluidParticles} from './fluidparticles';
-import window from './ssr-window'
 
 const defaultSettings = {
     scene: {

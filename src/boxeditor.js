@@ -332,24 +332,24 @@ export const BoxEditor = (function () {
 
         wgl.createProgramsFromFiles({
             backgroundProgram: {
-                vertexShader: 'shaders/background.vert',
-                fragmentShader: 'shaders/background.frag'
+                vertexShader: 'background.vert',
+                fragmentShader: 'background.frag'
             },
             boxProgram: {
-                vertexShader: 'shaders/box.vert',
-                fragmentShader: 'shaders/box.frag'
+                vertexShader: 'box.vert',
+                fragmentShader: 'box.frag'
             },
             boxWireframeProgram: {
-                vertexShader: 'shaders/boxwireframe.vert',
-                fragmentShader: 'shaders/boxwireframe.frag'
+                vertexShader: 'boxwireframe.vert',
+                fragmentShader: 'boxwireframe.frag'
             },
             gridProgram: {
-                vertexShader: 'shaders/grid.vert',
-                fragmentShader: 'shaders/grid.frag'
+                vertexShader: 'grid.vert',
+                fragmentShader: 'grid.frag'
             },
             pointProgram: {
-                vertexShader: 'shaders/point.vert',
-                fragmentShader: 'shaders/point.frag'
+                vertexShader: 'point.vert',
+                fragmentShader: 'point.frag'
             }
         }, (function (programs) {
             for (var programName in programs) {

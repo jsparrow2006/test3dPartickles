@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const { version } = require('./package.json');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const outputDir = path.resolve(__dirname, 'dist');
 
@@ -14,9 +13,13 @@ const config = {
   },
   output: {
     path: outputDir,
-    filename: '[name].bundle.js',
+    filename: 'index.js',
     library: 'particles3d',
     libraryTarget: 'umd',
+    globalObject: 'this'
+  },
+  resolveLoader: {
+    modules: ['node_modules', path.resolve(__dirname, 'loaders')]
   },
   module: {
     rules: [
@@ -40,9 +43,6 @@ const config = {
         VERSION: JSON.stringify(version),
       },
     }),
-    new CopyWebpackPlugin([
-      { from: 'src/shaders', to: 'shaders'}
-    ])
   ],
   stats: {
     assetsSort: '!size',
